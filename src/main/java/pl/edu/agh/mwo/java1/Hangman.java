@@ -57,18 +57,17 @@ public class Hangman {
     };
 
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         WordReader wordReader = new WordReader();
         wordReader.readFile();
 
-
-        RandomWord randomWord = new RandomWord(wordReader.getUppercaseWords());
-
-        String randomWordString = randomWord.getRandomWord();
-
-        WordCrypter wordCrypter = new WordCrypter(randomWordString);
-
         //System.out.println(randomWordString);
         System.out.println("Welcome to Hangman Game!!!");
+        System.out.println("choose how many letters the word should consist of");
+        int digit = sc.nextInt();
+        RandomWord randomWord = new RandomWord(wordReader.getUppercaseWordWithSpecificAmountOFLetters(digit));
+        String randomWordString = randomWord.getRandomWord();
+        WordCrypter wordCrypter = new WordCrypter(randomWordString);
         System.out.println("Below is the encoded word.");
         System.out.println(wordCrypter.cryptWord());
         HangManPrinter hangManPrinter = new HangManPrinter(HANGMANPICS);

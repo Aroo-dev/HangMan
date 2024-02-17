@@ -1,12 +1,12 @@
 package pl.edu.agh.mwo.java1;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class RandomWord {
-    private final ArrayList<String> words;
+    private final List<String> words;
 
-    public RandomWord(ArrayList<String> wordList) {
+    public RandomWord(List<String> wordList) {
         this.words = wordList;
     }
 
